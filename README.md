@@ -1,4 +1,4 @@
-# Music Technology Paper Archive 
+# Academic Paper Archive of Music Technology  
 
 ##Overview
 This git repo is to create archive of academic papers regarding music tschnologies. 
