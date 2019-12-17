@@ -1,10 +1,20 @@
-#Overview
+# Music Technology Paper Archive 
 
-##This git repo is to create archive of academic papers regarding music tschnologies. 
+##Overview
+This git repo is to create archive of academic papers regarding music tschnologies. 
 
 
-#Categoris
-
-##This archive consists of following categories and subcategories.
- aaaaa
+##Categories and contents 
+This archive consists of following categories and subcategories.
  
+##How to contribute
+
+
+##Acknowledgement
+
+
+ 
+
+
+
+
