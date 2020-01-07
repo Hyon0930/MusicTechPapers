@@ -4,32 +4,33 @@ import matplotlib.pyplot as plt
 import numpy as np
 from collections import OrderedDict
 
+
 def calculate_statistics(filename):
-    years = {'2007' : 0, '2008' : 0, '2009' : 0, '2010' : 0,
-             '2011' : 0, '2012' : 0, '2013' : 0, '2014' : 0,
-             '2015' : 0, '2016' : 0, '2017' : 0, '2018' : 0,
-             '2019' : 0}
-    
-    categories = {'Level' : 0, 
-                  'Panning' : 0,
-                  'Equalization' : 0,
-                  'Compression' : 0,
-                  'Reverb' : 0,
-                  'Integrated' : 0}
-    
-    approaches = {'GT' : 0, 'KE' : 0, 'ML' : 0}
+    years = {'2007': 0, '2008': 0, '2009': 0, '2010': 0,
+             '2011': 0, '2012': 0, '2013': 0, '2014': 0,
+             '2015': 0, '2016': 0, '2017': 0, '2018': 0,
+             '2019': 0}
 
-    approaches_by_year = {'GT' : years.copy(),
-                          'KE' : years.copy(),
-                          'ML' : years.copy()}
+    categories = {'Level': 0,
+                  'Panning': 0,
+                  'Equalization': 0,
+                  'Compression': 0,
+                  'Reverb': 0,
+                  'Integrated': 0}
 
-    categories_by_year = {'Level' : years.copy(), 
-                          'Panning' : years.copy(),
-                          'Equalization' : years.copy(),
-                          'Compression' : years.copy(),
-                          'Reverb' : years.copy(),
-                          'Integrated' : years.copy()}
-   
+    approaches = {'GT': 0, 'KE': 0, 'ML': 0}
+
+    approaches_by_year = {'GT': years.copy(),
+                          'KE': years.copy(),
+                          'ML': years.copy()}
+
+    categories_by_year = {'Level': years.copy(),
+                          'Panning': years.copy(),
+                          'Equalization': years.copy(),
+                          'Compression': years.copy(),
+                          'Reverb': years.copy(),
+                          'Integrated': years.copy()}
+
     total_pubs = 0
 
     with open(filename, "r+") as mixing:
@@ -37,14 +38,14 @@ def calculate_statistics(filename):
         f = mixing_tsv.fieldnames
         for entry in mixing_tsv:
             # get attributes from table
-            year      = entry['Year']
-            category  = entry['Category']
-            approach  = entry['Approach']
+            year = entry['Year']
+            category = entry['Category']
+            approach = entry['Approach']
 
-            years[year]          += 1
+            years[year] += 1
             categories[category] += 1
             approaches[approach] += 1
-            
+
             categories_by_year[category][year] += 1
             approaches_by_year[approach][year] += 1
 
@@ -60,7 +61,7 @@ def calculate_statistics(filename):
 
     GT_color = '#461a68'
     KE_color = '#9d3484'
-    ML_color = '#ec7a8a'  
+    ML_color = '#ec7a8a'
 
     # plot publications by year
     years_num = [int(i) for i in sorted(years.keys())]
@@ -83,14 +84,15 @@ def calculate_statistics(filename):
     plt.figure(1)
     p1 = plt.bar(years_num, GT_pubs_by_year, align='center', color=GT_color)
     p2 = plt.bar(years_num, KE_pubs_by_year, bottom=GT_pubs_by_year, align='center', color=KE_color)
-    p3 = plt.bar(years_num, ML_pubs_by_year, bottom=GT_pubs_by_year+KE_pubs_by_year, align='center', color=ML_color)
+    p3 = plt.bar(years_num, ML_pubs_by_year, bottom=GT_pubs_by_year + KE_pubs_by_year, align='center', color=ML_color)
     ax = plt.gca()
     ax.spines['top'].set_visible(False)
     ax.spines['right'].set_visible(False)
     plt.xticks(years_num, years_num, rotation='vertical')
     plt.ylabel('Publications')
     plt.title('Automatic Mixing Publications by Year: Approach Breakdown', y=1.08)
-    lgd = plt.legend((p3[0], p2[0], p1[0]), ('Machine Learning', 'Knowledge Engineering', 'Grounded Theory'), loc=3, bbox_to_anchor=(1, 0.5))
+    lgd = plt.legend((p3[0], p2[0], p1[0]), ('Machine Learning', 'Knowledge Engineering', 'Grounded Theory'), loc=3,
+                     bbox_to_anchor=(1, 0.5))
     plt.savefig('figs/approaches_by_year.svg', additional_artists=lgd, bbox_inches="tight", transparent=True)
 
     # plot publications by year with division by category
@@ -104,18 +106,26 @@ def calculate_statistics(filename):
     plt.figure(2)
     p1 = plt.bar(years_num, level_pubs_by_year, align='center', color=level_color)
     p2 = plt.bar(years_num, pan_pubs_by_year, bottom=level_pubs_by_year, align='center', color=pan_color)
-    p3 = plt.bar(years_num, eq_pubs_by_year, bottom=level_pubs_by_year+pan_pubs_by_year, align='center', color=eq_color)
-    p4 = plt.bar(years_num, comp_pubs_by_year, bottom=level_pubs_by_year+pan_pubs_by_year+eq_pubs_by_year, align='center', color=comp_color)
-    p5 = plt.bar(years_num, verb_pubs_by_year, bottom=level_pubs_by_year+pan_pubs_by_year+eq_pubs_by_year+comp_pubs_by_year, align='center', color=verb_color)
-    p6 = plt.bar(years_num, int_pubs_by_year, bottom=level_pubs_by_year+pan_pubs_by_year+eq_pubs_by_year+comp_pubs_by_year+verb_pubs_by_year, align='center', color=int_color)
+    p3 = plt.bar(years_num, eq_pubs_by_year, bottom=level_pubs_by_year + pan_pubs_by_year, align='center',
+                 color=eq_color)
+    p4 = plt.bar(years_num, comp_pubs_by_year, bottom=level_pubs_by_year + pan_pubs_by_year + eq_pubs_by_year,
+                 align='center', color=comp_color)
+    p5 = plt.bar(years_num, verb_pubs_by_year,
+                 bottom=level_pubs_by_year + pan_pubs_by_year + eq_pubs_by_year + comp_pubs_by_year, align='center',
+                 color=verb_color)
+    p6 = plt.bar(years_num, int_pubs_by_year,
+                 bottom=level_pubs_by_year + pan_pubs_by_year + eq_pubs_by_year + comp_pubs_by_year + verb_pubs_by_year,
+                 align='center', color=int_color)
     ax = plt.gca()
     ax.spines['top'].set_visible(False)
     ax.spines['right'].set_visible(False)
     plt.xticks(years_num, years_num, rotation='vertical')
     plt.ylabel('Publications')
     plt.title('Automatic Mixing Publications by Year: Category Breakdown', y=1.08)
-    lgd = plt.legend((p6[0], p5[0], p4[0], p3[0], p2[0], p1[0]), ('Integrated', 'Reverb', 'Compression', 'Equalization', 'Panning', 'Level'), loc=3, bbox_to_anchor=(1, 0.5))
-    plt.savefig('figs/categories_by_year.svg',  additional_artists=lgd, bbox_inches="tight",  transparent=True)
+    lgd = plt.legend((p6[0], p5[0], p4[0], p3[0], p2[0], p1[0]),
+                     ('Integrated', 'Reverb', 'Compression', 'Equalization', 'Panning', 'Level'), loc=3,
+                     bbox_to_anchor=(1, 0.5))
+    plt.savefig('figs/categories_by_year.svg', additional_artists=lgd, bbox_inches="tight", transparent=True)
 
     # plot pie chart of approaches
     plt.figure(3)
@@ -143,7 +153,8 @@ def calculate_statistics(filename):
     for perct in details[2]:
         perct.set_color('white')
     plt.axis('equal')
-    plt.savefig('figs/categories_breakdown.svg',  transparent=True)
+    plt.savefig('figs/categories_breakdown.svg', transparent=True)
+
 
 def sort_papers_by_year(filename):
     with open(filename, "r+") as mixing:
@@ -151,7 +162,7 @@ def sort_papers_by_year(filename):
         f = mixing_tsv.fieldnames
 
         sorted_mixing = sorted(mixing_tsv, key=operator.itemgetter('Year'), reverse=True)
-        
+
         mixing.seek(0)
         writer = csv.DictWriter(mixing, delimiter='\t', dialect='excel-tab', fieldnames=f)
         writer.writeheader()
@@ -159,47 +170,51 @@ def sort_papers_by_year(filename):
             writer.writerow(row)
         mixing.truncate()
 
+
 def build_readme(filename):
     # define dict of section holders
-    sections = OrderedDict({'Level' : "", 
-                'Panning' : "",
-                'Equalization' : "",
-                'Compression' : "",
-                'Reverb' : "",
-                'Integrated' : ""})
+    sections = OrderedDict({'Level': "",
+                            'Panning': "",
+                            'Equalization': "",
+                            'Compression': "",
+                            'Reverb': "",
+                            'Integrated': ""})
 
     with open(filename) as mixing:
         mixing = csv.DictReader(mixing, dialect='excel-tab')
-        
+
         # get column labels
         f = mixing.fieldnames
-        
+
         # initalize table for each section
         for section in sections:
             print(section)
-            sections[section] = "## " + section + "\n|%s|%s|%s|%s|%s|\n" %(f[0], f[1], f[2], f[6], f[4]) + "|---|---|---|---|---|\n"
+            sections[section] = "## " + section + "\n|%s|%s|%s|%s|%s|\n" % (
+            f[0], f[1], f[2], f[6], f[4]) + "|---|---|---|---|---|\n"
 
         for entry in mixing:
             # get attributes from table
-            year      = entry['Year']
-            title     = entry['Title']
-            authors   = entry['Authors']
-            paper     = entry['Paper']
+            year = entry['Year']
+            title = entry['Title']
+            authors = entry['Authors']
+            paper = entry['Paper']
             resources = entry['Resources']
-            category  = entry['Category']
-            approach  = entry['Approach']
-            
-            if resources == "No":
-                sections[category] += "|%s|[%s](%s)|%s|%s|%s|\n" %(year, title, paper, authors, approach, resources)
-            else:
-                sections[category] += "|%s|[%s](%s)|%s|%s|[Yes](%s)|\n" %(year, title, paper, authors, approach, resources)
+            category = entry['Category']
+            approach = entry['Approach']
 
-    with open("README.md", "w+") as readme_file, open('header.md') as header, open('acknowledgments.md') as ack, open('contribute.md') as contrib:
+            if resources == "No":
+                sections[category] += "|%s|[%s](%s)|%s|%s|%s|\n" % (year, title, paper, authors, approach, resources)
+            else:
+                sections[category] += "|%s|[%s](%s)|%s|%s|[Yes](%s)|\n" % (
+                year, title, paper, authors, approach, resources)
+
+    with open("README.md", "w+") as readme_file, open('header.md') as header, open('acknowledgments.md') as ack, open(
+            'contribute.md') as contrib:
         readme_file.write(header.read())
 
         for section in sections:
             readme_file.write(sections[section])
-        
+
         stats = """# Statistics\n"""
         stats += """![pubs_by_year](figs/papers_by_year.svg)\n"""
         stats += """![categories_by_year](figs/categories_by_year.svg)\n"""
@@ -209,15 +224,17 @@ def build_readme(filename):
         readme_file.write(stats)
         readme_file.write(ack.read())
         readme_file.write(contrib.read())
-        
+
     num_papers = mixing.line_num - 1
     return num_papers
+
 
 def main(filename="mixingpapers.tsv"):
     sort_papers_by_year(filename)
     calculate_statistics(filename)
     num_papers = build_readme(filename)
     print("Compiled " + str(num_papers) + " papers")
+
 
 if __name__ == "__main__":
     main("mixingpapers.tsv")
