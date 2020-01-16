@@ -47,15 +47,22 @@ def main(filename):
         merge_mds(path)
 
 
+
+def dataset_list():
+    
+
+
+
 def merge_mds(path_to_mds):
     md_list = os.listdir(path_to_mds)
-    print("md_list", path_to_mds, md_list)
     readme_name = "README.md"
 
     with open(path_to_mds+readme_name, "w+") as readme:
         for md in md_list:
             with open(path_to_mds+md) as temp:
                 readme.write(temp.read())
+            if md != "README.md":
+                os.remove(path_to_mds+md)
 
 def file_destination(mother_group, child_group,
                      root_path="/home/hk/Documents/Workspace/proj/paper_archive"):
@@ -73,8 +80,9 @@ def create_md(path, publication_year, title, title_url, author,
 
     with open(path+filename,"w+" ) as paper_md:
 
-        line_title = "#" + publication_year + ' ' + '['+ title +']' +'('+ title_url+')' + '\n'
-        line_author = "Author: " + author + '\n'
+        line_title = "# " + ' ' + '['+ title +']' +'('+ title_url+')' + '\n'
+        line_author = "Author: " + author + '\n' + '\n'
+        line_year = "Year: " + publication_year + '\n'
         line_abstract = ">Abstract: " + abstract +'\n' + '\n'
         line_dataset = "Data Set: "
         line_sourcecode = "Source Code: "
@@ -115,6 +123,7 @@ def create_md(path, publication_year, title, title_url, author,
 
         paper_md.write(line_title)
         paper_md.write(line_author)
+        paper_md.write(line_year)
         paper_md.write(line_abstract)
         paper_md.write(line_dataset)
         paper_md.write(line_sourcecode)
