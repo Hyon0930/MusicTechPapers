@@ -11,6 +11,7 @@ def main(filename):
         f = music_tech_papers.fieldnames
 
         paths = []
+        accumulated_table = []
 
         for entry in music_tech_papers:
             # get attributes from table
@@ -41,14 +42,53 @@ def main(filename):
                       abstract, data_set1, data_set_url1, data_set2, data_set_url2, data_set3, data_set_url3,
                       source_code, source_code_url, demo1, demo_url1, demo2, demo_url2)
 
+            group_dataset_table(mother_group, child_group,
+                     data_set1, data_set_url1,
+                     data_set2, data_set_url2,
+                     data_set3, data_set_url3,
+                     accumulated_table)
+
     paths = list(dict.fromkeys(paths))
 
+    print("accumulated_table", accumulated_table)
     for path in paths:
         merge_mds(path)
 
+def dataset_table(accumulated_table):
+    first_column = "| Mother Group | Child Group | Data set"
+
+def group_dataset_table(mother, child,
+                     data_set1, data_set_url1,
+                     data_set2, data_set_url2,
+                     data_set3, data_set_url3,
+                     accumuated_list):
+
+    temp = [data_set1, data_set2, data_set3]
+    content = [i for i in temp if i != '']
+
+    if len(content) == 0:
+        return accumuated_list
+
+    elif len(content) == 1:
+        table_line = '|' + mother + '|' + child + '|[' + data_set1 + '](' + data_set_url1 + ')|' \
+                    + '|' + '|' + '|' +'|' \
+                    + '|' +  '|' + '|' + '|'
+        accumuated_list.append(table_line)
+    elif len(content) == 2:
+        table_line = '|' + mother + '|' + child + '|[' + data_set1 + '](' + data_set_url1 + ')|' \
+                     + '|[' + data_set2 + '](' + data_set_url2 + ')|' \
+                     + '|' + '|' + '|' + '|'
+        return accumuated_list.append(table_line)
+    elif len(content) == 3:
+        table_line = '|' + mother + '|' + child + '|' + data_set1 + '|' + data_set_url1 + '|' \
+                     + '|[' + data_set2 + '](' + data_set_url2 + ')|' \
+                     + '|[' + data_set3 + '](' + data_set_url3 + ')|'
+        return  accumuated_list.append(table_line)
 
 
-def dataset_list():
+# '|' +  + '|' +  + '|' + + '|' + + '|'
+
+
     
 
 
