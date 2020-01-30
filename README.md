@@ -4,6 +4,10 @@
 This git repo is to create archive of academic papers regarding music technologies.
 This main page summarizes the list of papers and each direcory shows detailed contents of each paper, i.e. publshed year, title, authors,  
 
+## Acknowledgement
+
+This archive is inspired by two sources; [AutomaticMixingPapers](https://github.com/csteinmetz1/AutomaticMixingPapers) by [Christian Steinmetz](https://www.christiansteinmetz.com/) and [Paper With Code](https://paperswithcode.com/).
+Special thanks to them for their amazing work.
 
 
 ## Structure
@@ -25,10 +29,6 @@ Please fill in the contents to the music_tech_papers_contents.tsv accordingly an
 If you need to create new mother group and child group, please mention that in the issue. 
 
 
-## Acknowledgement
-
-This archive is inspired by two sources; [AutomaticMixingPapers](https://github.com/csteinmetz1/AutomaticMixingPapers) by [Christian Steinmetz](https://www.christiansteinmetz.com/) and [Paper With Code](https://paperswithcode.com/).
-Special thanks to them for their amazing work.
 
 
 
