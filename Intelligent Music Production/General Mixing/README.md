@@ -58,55 +58,7 @@ Source Code: Not availabe
 
 Demo: [Demo](https://soundcloud.com/flavioeverardo-research/sets)
 
-#  [Music remixing and upmixing using source separation](https://www.researchgate.net/publication/308058809_Music_remixing_and_upmixing_using_source_separation)
-Author: Roma, Gerard; Grais, Emad M; Simpson, Andrew J R; Plumbley, Mark D
-
-Year: 2016
->Abstract: Current research on audio source separation provides tools to estimate the signals contributed by different instruments in polyphonic music mixtures. Such tools can be already incorporated in music production and post-production workﬂows. In this paper, we describe recent experiments where audio source separation is applied to remixing and upmixing existing mono and stereo music content.
-
-Data Set: [DSD100](https://sigsep.github.io/datasets/dsd100.html)
-
-Source Code: Not availabe
-
-Demo: Not availabe
-
-#  [INSTRUMENT IDENTIFICATION INFORMED MULTI-TRACK MIXING](http://music.ece.drexel.edu/files/Navigation/Publications/Scott2013b.pdf)
-Author: Scott, Jeffrey; Kim, Youngmoo E
-
-Year: 2013
->Abstract: Although digital music production technology has become more accessible over the years, the tools are complex and often difﬁcult to navigate, resulting in a large learning curve for new users. This paper approaches the task of automated multi-track mixing from the perspective of applying common practices based on the instrument types present in a mixture. We apply basic principles to each track automatically, varying the parameters of gain, stereo panning, and coarse equalization. Assuming all instruments are known, a small listening evaluation is completed on the mixed tracks to validate the assumptions of the mixing model. This work represents an exploratory analysis into the efﬁcacy of a hierarchical approach to multi-track mixing using instrument class as a guide to processing techniques.
-
-Data Set: [Weathervane Music](https://weathervanemusic.org/), [Sound on Sound](http://www.soundonsound.com/), [Multi-Track Dataset](http://music.ece.drexel.edu/research/AutoMix)
-
-Source Code: Not availabe
-
-Demo: [Demo](http://music.ece.drexel.edu/research/AutoMix)
-
-#  [Modeling of nonlinear audio effects with end-to-end deep neural networks](http://arxiv.org/abs/1810.06603)
-Author: Ramirez, Marco A. Martínez; Reiss, Joshua D.
-
-Year: 2018
->Abstract: In the context of music production, distortion effects are mainly used for aesthetic reasons and are usually applied to electric musical instruments. Most existing methods for nonlinear modeling are often either simpliﬁed or optimized to a very speciﬁc circuit. In this work, we investigate deep learning architectures for audio processing and we aim to ﬁnd a general purpose end-to-end deep neural network to perform modeling of nonlinear audio effects. We show the network modeling various nonlinearities and we discuss the generalization capabilities among different instruments.
-
-Data Set: [IDMT-SMT-AudioEffects dataset](https://www.idmt.fraunhofer.de/en/business_units/m2d/smt/audio_effects.html)
-
-Source Code: Not availabe
-
-Demo: [Demo](https://github.com/mchijmma/modeling-nonlinear)
-
-#  [DEEP LEARNING AND INTELLIGENT AUDIO MIXING](https://www.researchgate.net/publication/330967800_Deep_Learning_and_Intelligent_Audio_Mixing)
-Author: Ramırez, Marco A Martınez; Reiss, Joshua D
-
-Year: 2017
->Abstract: Mixing multitrack audio is a crucial part of music production. With recent advances in machine learning techniques such as deep learning, it is of great importance to conduct research on the applications of these methods in the ﬁeld of automatic mixing. In this paper, we present a survey of intelligent audio mixing systems and their recent incorporation of deep neural networks. We propose to the community a research trajectory in the ﬁeld of deep learning applied to intelligent music production systems. We conclude with a proof of concept based on stem audio mixing as a contentbased transformation using a deep autoencoder.
-
-Data Set: [The open multitrack testbed](http://multitrack.eecs.qmul.ac.uk/), [MedleyDB](https://medleydb.weebly.com/)
-
-Source Code: Not availabe
-
-Demo: Not availabe
-
-#  [Towards an Automated Multitrack Mixing Tool us#  [AUTOMATIC MULTI-TRACK MIXING USING LINEAR DYNAMICAL SYSTEMS](http://music.ece.drexel.edu/files/Navigation/Publications/Scott2011a.pdf)
+#  [AUTOMATIC MULTI-TRACK MIXING USING LINEAR DYNAMICAL SYSTEMS](http://music.ece.drexel.edu/files/Navigation/Publications/Scott2011a.pdf)
 Author: Scott, Jeffrey; Prockup, Matthew; Schmidt, Erik M; Kim, Youngmoo E
 
 Year: 2011

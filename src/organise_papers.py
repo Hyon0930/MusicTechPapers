@@ -12,7 +12,7 @@ def main(filename):
 
         paths = []
         accumulated_table = []
-
+        num_paper = 0
         for entry in music_tech_papers:
             # get attributes from table
             mother_group = entry[f[0]]
@@ -48,14 +48,21 @@ def main(filename):
                      data_set3, data_set_url3,
                      accumulated_table)
 
+            num_paper += 1
+
+    print("num_paper", num_paper)
+
     paths = list(dict.fromkeys(paths))
 
     print("accumulated_table", accumulated_table)
     for path in paths:
         merge_mds(path)
 
-def dataset_table(accumulated_table):
-    first_column = "| Mother Group | Child Group | Data set"
+# TODO dataset table can be added in next dev phase
+# def dataset_table(accumulated_table):
+#     first_column = "| Mother Group | Child Group | Data set |"
+
+
 
 def group_dataset_table(mother, child,
                      data_set1, data_set_url1,

@@ -58,35 +58,7 @@ Source Code: Not availabe
 
 Demo: Not availabe
 
-#  [Automatic Mixing Level Balancing Enhanced Through Source Interference Identiﬁcation](http://www.aes.org/e-lib/browse.cfm?elib=20355)
-Author: Moffat, David; Sandler, Mark B
-
-Year: 2019
->Abstract: It has been well established that equal loudness normalisation can produce a perceptually appropriate level balance in an automated mix. Previous work assumes that each captured track represents an individual sound source. In the context of a live drum recording this assumption is incorrect. This paper will demonstrate approach to identify the source interference and adjust the source gains accordingly, to ensure that tracks are all set to equal perceptual loudness. The impact of this interference on the selected gain parameters and resultant mixture is highlighted.
-
-Data Set: [ENST dataset](http://www.tsi.telecom-paristech.fr/aao/en/2010/02/19/enst-drums-an-extensive-audio-visual-database-for-drum-sigls-processing/)
-
-Source Code: Not availabe
-
-Demo: Not availabe
-
-#  [Automated Tonal Balance Enhancement for Audio Mastering Applications](http://www.aes.org/e-lib/browse.cfm?elib=16737)
-Author: Mimilakis, Stylianos-Ioannis; Drossos, Konstantinos; Floros, Andreas; Katerelos, Dionysios
-
-Year: 2013
->Abstract: Modern audio mastering procedures are involved with the selective enhancement or attenuation of specific frequency bands. The main reason is the tonal enhancement of the original / unmastered audio material. The aforementioned process is mostly based on the musical information and the mode of the audio material. This information can be retrieved from a listening procedure of the original stimuli, or the corespondent musical key notes. The current work presents an adaptive and automated equalization system that performs the aforementioned mastering procedure, based on a novel method of fundamental frequency tracking. In addition to this, the overall system is being evaluated with objective PEAQ analysis and subjective listening tests in real mastering audio conditions.
-
-Data Set: Not availabe
-
-Source Code: Not availabe
-
-Demo: Not availabe
-
-#  [Applications of Loudness Models in Audio Engineering](http://www.open-access.bcu.ac.uk/7228/1/PhD%20Thesis.pdf)
-Author: Ward, Dominic
-
-Year: 2017
->Abstract: This thesis investigates the application of perceptual models to areas of audio engineering, with a particular focus on music production. The goal was to establish efficient and practical tools for the measurement and control of the perceived loudness of musical sounds. Two types of loudness model were investigated: the single-band model and the multiband excitation pattern (EP) model. The heuristic single-band devices were designed to be simple but sufficiently effective for real-world application, whereas the multiband procedures were developed to give a reasonable account of a large body of psychoacoustic findings according to a functional model of the peripheral hearing system. The research addresses the extent to which current models of loudness generalise to musical instruments, and whether can they be successfully employed in music applications. The domain-specific disparity between the two types of model was first tackled by reducing the computational load of state-of-the-art EP models to allow for fast but low-error auditory signal processing. Two elaborate hearing models were analysed and optimised using musical instruments and speech as test stimuli. It was shown that, after significantly reducing the complexity of both procedures, estimates of global loudness, such as peak loudness, as well as the intermediate auditory representations can be preserved with high accuracy. Based on the optimisations, two real-time applications were developed: a binaural loudness meter and an automatic multitrack mixer. This second system was designed to work independently of the loudness measurement procedure, and therefore supports both linear and nonlinear models. This allowed for a single mixing device to be assessed using different loudness metrics and this was demonstrated by evaluating three configurations through subjective assessme#  [Multi-track mixing using a model of loudness and partial loudness](http://www.aes.org/e-lib/browse.cfm?elib=16436)
+#  [Multi-track mixing using a model of loudness and partial loudness](http://www.aes.org/e-lib/browse.cfm?elib=16436)
 Author: Ward, Dominic; Reiss, Joshua D; Athwal, Cham
 
 Year: 2012
