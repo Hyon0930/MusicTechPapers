@@ -13,6 +13,8 @@ def main(filename):
         paths = []
         accumulated_table = []
         num_paper = 0
+        structure = []
+
         for entry in music_tech_papers:
             # get attributes from table
             mother_group = entry[f[0]]
@@ -20,7 +22,7 @@ def main(filename):
             publication_year = entry[f[2]]
             author = entry[f[3]]
             title = entry[f[4]]
-            title_url	= entry[f[5]]
+            title_url = entry[f[5]]
             abstract= entry[f[6]]
             source_code	= entry[f[7]]
             source_code_url= entry[f[8]]
@@ -35,34 +37,34 @@ def main(filename):
             demo2 = entry[f[17]]
             demo_url2 = entry[f[18]]
 
-            path = file_destination(mother_group, child_group)
+            path = file_destination(mother_group, child_group, "/home/hk/Documents/workspace/paper_archive/")
             paths.append(path)
 
             create_md(path, publication_year, title, title_url, author,
                       abstract, data_set1, data_set_url1, data_set2, data_set_url2, data_set3, data_set_url3,
                       source_code, source_code_url, demo1, demo_url1, demo2, demo_url2)
+            structure.append((mother_group, child_group))
 
-            group_dataset_table(mother_group, child_group,
-                     data_set1, data_set_url1,
-                     data_set2, data_set_url2,
-                     data_set3, data_set_url3,
-                     accumulated_table)
+            # complete_data_table = group_dataset_table(mother_group, child_group,
+            #          data_set1, data_set_url1,
+            #          data_set2, data_set_url2,
+            #          data_set3, data_set_url3,
+            #          accumulated_table)
 
             num_paper += 1
 
     print("num_paper", num_paper)
+    print("structure", structure)
 
     paths = list(dict.fromkeys(paths))
+    pure_structure = list(dict.fromkeys(structure))
 
-    print("accumulated_table", accumulated_table)
     for path in paths:
         merge_mds(path)
 
 # TODO dataset table can be added in next dev phase
 # def dataset_table(accumulated_table):
 #     first_column = "| Mother Group | Child Group | Data set |"
-
-
 
 def group_dataset_table(mother, child,
                      data_set1, data_set_url1,
@@ -92,12 +94,7 @@ def group_dataset_table(mother, child,
                      + '|[' + data_set3 + '](' + data_set_url3 + ')|'
         return  accumuated_list.append(table_line)
 
-
 # '|' +  + '|' +  + '|' + + '|' + + '|'
-
-
-    
-
 
 
 def merge_mds(path_to_mds):
@@ -112,8 +109,8 @@ def merge_mds(path_to_mds):
                 os.remove(path_to_mds+md)
 
 def file_destination(mother_group, child_group,
-                     root_path="/home/hk/Documents/Workspace/proj/paper_archive"):
-    return root_path + '/' + mother_group + '/' + child_group + '/'
+                     root_path="/home/hk/Documents/workspace/proj/paper_archive/"):
+    return root_path + mother_group + '/' + child_group + '/'
 
 def create_md(path, publication_year, title, title_url, author,
                       abstract, data_set1, data_set_url1, data_set2, data_set_url2, data_set3, data_set_url3,
@@ -125,15 +122,15 @@ def create_md(path, publication_year, title, title_url, author,
     source = [source_code, source_code_url]
     demo = [demo1, demo_url1, demo2, demo_url2]
 
-    with open(path+filename,"w+" ) as paper_md:
+    with open(path+filename,"w+") as paper_md:
 
         line_title = "# " + ' ' + '['+ title +']' +'('+ title_url+')' + '\n'
-        line_author = "Author: " + author + '\n' + '\n'
-        line_year = "Year: " + publication_year + '\n'
-        line_abstract = ">Abstract: " + abstract +'\n' + '\n'
-        line_dataset = "Data Set: "
-        line_sourcecode = "Source Code: "
-        line_demo = "Demo: "
+        line_author = "**Author**: " + author + '\n' + '\n'
+        line_year = "**Year**: " + publication_year + '\n'
+        line_abstract = ">**Abstract**: " + abstract +'\n' + '\n'
+        line_dataset = "**Data Set**: "
+        line_sourcecode = "**Source Code**: "
+        line_demo = "**Demo**: "
 
         for i in range(0,len(data)):
             if data[i] == '':
@@ -176,8 +173,6 @@ def create_md(path, publication_year, title, title_url, author,
         paper_md.write(line_sourcecode)
         paper_md.write(line_demo)
 
-
-
 def sort_papers_by_year(filename):
     with open(filename, "r+") as mixing:
         mixing_tsv = csv.DictReader(mixing, dialect='excel-tab')
@@ -191,11 +186,29 @@ def sort_papers_by_year(filename):
         for row in sorted_mixing:
             writer.writerow(row)
         mixing.truncate()
+        #check if this works properly.
+
+#TODO def structure_md():
+
+def create_main_md():
+    # first block + structure.md + end_block.md
+    with open("README.md", "w+") as readme,
+        open("first_block.md") as first_block_md,
+        open("structure.md") as structure_md,
+        open("end_block.md") as end_block_md:
+
+
+
+
+
+
+
 
 
 if __name__ == "__main__":
-    sort_papers_by_year("music_tech_papers - music_tech_papers.tsv")
+    #sort_papers_by_year("music_tech_papers - music_tech_papers.tsv")
     main("music_tech_papers - music_tech_papers.tsv")
+    create_main_md()
 
     # find directory to put read me
     # write one readme.md for each paper
@@ -216,9 +229,6 @@ if __name__ == "__main__":
         source_code = "Not available"
     if demo1 == '':
         demo1 = "Not available"
-        
-        
+
 # +'['+  +']' +'(' + + ')' +
-
-
 '''
