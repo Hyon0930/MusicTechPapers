@@ -53,11 +53,10 @@ def main(filename):
 
             num_paper += 1
 
-    # print("num_paper", num_paper)
-    # print("structure", structure)
-
     paths = list(dict.fromkeys(paths))
     # pure_structure = list(dict.fromkeys(structure))
+
+
 
     for path in paths:
         merge_mds(path)
@@ -92,15 +91,19 @@ def group_dataset_table(mother, child,
 
 # '|' +  + '|' +  + '|' + + '|' + + '|'
 
-
 def merge_mds(path_to_mds):
-    md_list = os.listdir(path_to_mds)
+    md_list_temp = os.listdir(path_to_mds)
+    md_list = sorted(md_list_temp, reverse=True)
+
+
     readme_name = "README.md"
 
     with open(path_to_mds+readme_name, "w+") as readme:
         for md in md_list:
             with open(path_to_mds+md) as temp:
                 readme.write(temp.read())
+
+
             if md != "README.md":
                 os.remove(path_to_mds+md)
 
@@ -118,7 +121,7 @@ def create_md(path, publication_year, title, title_url, author,
     source = [source_code, source_code_url]
     demo = [demo1, demo_url1, demo2, demo_url2]
 
-    with open(path+filename,"w+") as paper_md:
+    with open(path+publication_year+filename,"w+") as paper_md:
 
         line_title = "# " + ' ' + '['+ title +']' +'('+ title_url+')' + '\n'
         line_author = "**Author**: " + author + '\n' + '\n'
@@ -182,7 +185,6 @@ def sort_papers_by_year(filename):
         for row in sorted_mixing:
             writer.writerow(row)
         mixing.truncate()
-        #check if this works properly.
 
 
 def create_main_md():

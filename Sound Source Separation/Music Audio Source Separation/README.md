@@ -1,3 +1,51 @@
+#  [Sparse Pursuit and Dictionary Learning for Blind Source Separation in Polyphonic Music Recordings](http://arxiv.org/abs/1806.00273)
+**Author**: Schulze, Sören; King, Emily J.
+
+**Year**: 2019
+>**Abstract**: We propose a novel method for the blind separation of single-channel audio signals produced by the mixed sounds of musical instruments. While the approach of applying non-negative matrix factorization (NMF) has been studied in many papers, it does not make use of the pitch-invariance that the sounds of many instruments exhibit. This limitation can be overcome by using tensor factorization, in which context the use of log-frequency spectrograms was initiated, but this still requires the specific tuning of the instruments to be hard-coded into the algorithm. We develop a general-purpose sparse pursuit method that matches a discrete spectrum with given shifted continuous patterns. We first use it in order to transform our audio signal into a log-frequency spectrogram that shares properties with the mel spectrogram but is applicable to a wider frequency range. Then, we use the same algorithm to identify patterns from instrument sounds in the spectrogram. The relative amplitudes of the harmonics are saved in a dictionary, which is trained via a modified version of Adam. For a realistic monaural piece with acoustic recorder and violin, we achieve qualitatively good separation with a signal-to-distortion ratio (SDR) of 13.7 dB, a signal-to-interference ratio (SIR) of 28.1 dB, and a signal-to-artifacts ratio (SAR) of 13.9 dB, averaged over the instruments.
+
+**Data Set**: Not availabe
+
+**Source Code**: [Source Code](https://github.com/rgcda/Musisep)
+
+**Demo**: [Demo](https://www.math.colostate.edu/~king/software.html#Musisep)
+
+#  [End-to-end music source separation: is it possible in the waveform domain?](http://arxiv.org/abs/1810.12187)
+**Author**: Lluís, Francesc; Pons, Jordi; Serra, Xavier
+
+**Year**: 2019
+>**Abstract**: Most of the currently successful source separation techniques use the magnitude spectrogram as input, and are therefore by default omitting part of the signal: the phase. To avoid omitting potentially useful information, we study the viability of using end-to-end models for music source separation — which take into account all the information available in the raw audio signal, including the phase. Although during the last decades end-to-end music source separation has been considered almost unattainable, our results conﬁrm that waveform-based models can perform similarly (if not better) than a spectrogram-based deep learning model. Namely: a Wavenet-based model we propose and Wave-U-Net can outperform DeepConvSep, a recent spectrogram-based deep learning model.
+
+**Data Set**: [DSD100](https://sigsep.github.io/datasets/dsd100.html)
+
+**Source Code**: [Source Code](https://github.com/francesclluis/source-separation-wavenet)
+
+**Demo**: [Demo](http://jordipons.me/apps/end-to-end-music-source-separation/)
+
+#  [Single Channel Audio Source Separation using Convolutional Denoising Autoencoders](http://arxiv.org/abs/1703.08019)
+**Author**: Grais, Emad M.; Plumbley, Mark D.
+
+**Year**: 2017
+>**Abstract**: Deep learning techniques have been used recently to tackle the audio source separation problem. In this work, we propose to use deep fully convolutional denoising autoencoders (CDAEs) for monaural audio source separation. We use as many CDAEs as the number of sources to be separated from the mixed signal. Each CDAE is trained to separate one source and treats the other sources as background noise. The main idea is to allow each CDAE to learn suitable spectral-temporal ﬁlters and features to its corresponding source. Our experimental results show that CDAEs perform source separation slightly better than the deep feedforward neural networks (FNNs) even with fewer parameters than FNNs.
+
+**Data Set**: [SiSEC-2015-MUS-task dataset](https://sisec.inria.fr/sisec-2015/)
+
+**Source Code**: Not availabe
+
+**Demo**: Not availabe
+
+#  [Monoaural Audio Source Separation Using Deep Convolutional Neural Networks](http://link.springer.com/10.1007/978-3-319-53547-0_25)
+**Author**: Chandna, Pritish; Miron, Marius; Janer, Jordi; Gómez, Emilia
+
+**Year**: 2017
+>**Abstract**: In this paper we introduce a low-latency monaural source separation framework using a Convolutional Neural Network (CNN). We use a CNN to estimate time-frequency soft masks which are applied for source separation. We evaluate the performance of the neural network on a database comprising of musical mixtures of three instruments: voice, drums, bass as well as other instruments which vary from song to song. The proposed architecture is compared to a Multilayer Perceptron (MLP), achieving on-par results and a signiﬁcant improvement in processing time. The algorithm was submitted to source separation evaluation campaigns to test eﬃciency, and achieved competitive results.
+
+**Data Set**: [DSD100](https://sigsep.github.io/datasets/dsd100.html)
+
+**Source Code**: [Source Code](https://github.com/MTG/DeepConvSep)
+
+**Demo**: [Demo](https://www.youtube.com/watch?v=71WwHyDfE)
+
 #  [Improving music source separation based on deep neural networks through data augmentation and network blending](http://ieeexplore.ieee.org/document/7952158/)
 **Author**: Uhlich, Stefan; Porcu, Marcello; Giron, Franck; Enenkl, Michael; Kemp, Thomas; Takahashi, Naoya; Mitsufuji, Yuki
 
@@ -22,41 +70,17 @@
 
 **Demo**: Not availabe
 
-#  [Monoaural Audio Source Separation Using Deep Convolutional Neural Networks](http://link.springer.com/10.1007/978-3-319-53547-0_25)
-**Author**: Chandna, Pritish; Miron, Marius; Janer, Jordi; Gómez, Emilia
+#  [Deep clustering and conventional networks for music separation: Stronger together](http://ieeexplore.ieee.org/document/7952118/)
+**Author**: Luo, Yi; Chen, Zhuo; Hershey, John R.; Le Roux, Jonathan; Mesgarani, Nima
 
 **Year**: 2017
->**Abstract**: In this paper we introduce a low-latency monaural source separation framework using a Convolutional Neural Network (CNN). We use a CNN to estimate time-frequency soft masks which are applied for source separation. We evaluate the performance of the neural network on a database comprising of musical mixtures of three instruments: voice, drums, bass as well as other instruments which vary from song to song. The proposed architecture is compared to a Multilayer Perceptron (MLP), achieving on-par results and a signiﬁcant improvement in processing time. The algorithm was submitted to source separation evaluation campaigns to test eﬃciency, and achieved competitive results.
+>**Abstract**: Deep clustering is the ﬁrst method to handle general audio separation scenarios with multiple sources of the same type and an arbitrary number of sources, performing impressively in speaker-independent speech separation tasks. However, little is known about its effectiveness in other challenging situations such as music source separation. Contrary to conventional networks that directly estimate the source signals, deep clustering generates an embedding for each time-frequency bin, and separates sources by clustering the bins in the embedding space. We show that deep clustering outperforms conventional networks on a singing voice separation task, in both matched and mismatched conditions, even though conventional networks have the advantage of end-to-end training for best signal approximation, presumably because its more ﬂexible objective engenders better regularization. Since the strengths of deep clustering and conventional network architectures appear complementary, we explore combining them in a single hybrid network trained via an approach akin to multi-task learning. Remarkably, the combination signiﬁcantly outperforms either of its components.
 
 **Data Set**: [DSD100](https://sigsep.github.io/datasets/dsd100.html)
-
-**Source Code**: [Source Code](https://github.com/MTG/DeepConvSep)
-
-**Demo**: [Demo](https://www.youtube.com/watch?v=71WwHyDfE)
-
-#  [Single Channel Audio Source Separation using Convolutional Denoising Autoencoders](http://arxiv.org/abs/1703.08019)
-**Author**: Grais, Emad M.; Plumbley, Mark D.
-
-**Year**: 2017
->**Abstract**: Deep learning techniques have been used recently to tackle the audio source separation problem. In this work, we propose to use deep fully convolutional denoising autoencoders (CDAEs) for monaural audio source separation. We use as many CDAEs as the number of sources to be separated from the mixed signal. Each CDAE is trained to separate one source and treats the other sources as background noise. The main idea is to allow each CDAE to learn suitable spectral-temporal ﬁlters and features to its corresponding source. Our experimental results show that CDAEs perform source separation slightly better than the deep feedforward neural networks (FNNs) even with fewer parameters than FNNs.
-
-**Data Set**: [SiSEC-2015-MUS-task dataset](https://sisec.inria.fr/sisec-2015/)
 
 **Source Code**: Not availabe
 
 **Demo**: Not availabe
-
-#  [End-to-end music source separation: is it possible in the waveform domain?](http://arxiv.org/abs/1810.12187)
-**Author**: Lluís, Francesc; Pons, Jordi; Serra, Xavier
-
-**Year**: 2019
->**Abstract**: Most of the currently successful source separation techniques use the magnitude spectrogram as input, and are therefore by default omitting part of the signal: the phase. To avoid omitting potentially useful information, we study the viability of using end-to-end models for music source separation — which take into account all the information available in the raw audio signal, including the phase. Although during the last decades end-to-end music source separation has been considered almost unattainable, our results conﬁrm that waveform-based models can perform similarly (if not better) than a spectrogram-based deep learning model. Namely: a Wavenet-based model we propose and Wave-U-Net can outperform DeepConvSep, a recent spectrogram-based deep learning model.
-
-**Data Set**: [DSD100](https://sigsep.github.io/datasets/dsd100.html)
-
-**Source Code**: [Source Code](https://github.com/francesclluis/source-separation-wavenet)
-
-**Demo**: [Demo](http://jordipons.me/apps/end-to-end-music-source-separation/)
 
 #  [Model-based STFT phase recovery for audio source separation](http://arxiv.org/abs/1608.01953)
 **Author**: Magron, Paul; Badeau, Roland; David, Bertrand
@@ -93,28 +117,4 @@
 **Source Code**: [Source Code](https://www.music-ir.org/mirex/wiki/MIREX_HOME)
 
 **Demo**: [Demo](https://www.music-ir.org/mirex/wiki/MIREX_HOME)
-
-#  [Deep clustering and conventional networks for music separation: Stronger together](http://ieeexplore.ieee.org/document/7952118/)
-**Author**: Luo, Yi; Chen, Zhuo; Hershey, John R.; Le Roux, Jonathan; Mesgarani, Nima
-
-**Year**: 2017
->**Abstract**: Deep clustering is the ﬁrst method to handle general audio separation scenarios with multiple sources of the same type and an arbitrary number of sources, performing impressively in speaker-independent speech separation tasks. However, little is known about its effectiveness in other challenging situations such as music source separation. Contrary to conventional networks that directly estimate the source signals, deep clustering generates an embedding for each time-frequency bin, and separates sources by clustering the bins in the embedding space. We show that deep clustering outperforms conventional networks on a singing voice separation task, in both matched and mismatched conditions, even though conventional networks have the advantage of end-to-end training for best signal approximation, presumably because its more ﬂexible objective engenders better regularization. Since the strengths of deep clustering and conventional network architectures appear complementary, we explore combining them in a single hybrid network trained via an approach akin to multi-task learning. Remarkably, the combination signiﬁcantly outperforms either of its components.
-
-**Data Set**: [DSD100](https://sigsep.github.io/datasets/dsd100.html)
-
-**Source Code**: Not availabe
-
-**Demo**: Not availabe
-
-#  [Sparse Pursuit and Dictionary Learning for Blind Source Separation in Polyphonic Music Recordings](http://arxiv.org/abs/1806.00273)
-**Author**: Schulze, Sören; King, Emily J.
-
-**Year**: 2019
->**Abstract**: We propose a novel method for the blind separation of single-channel audio signals produced by the mixed sounds of musical instruments. While the approach of applying non-negative matrix factorization (NMF) has been studied in many papers, it does not make use of the pitch-invariance that the sounds of many instruments exhibit. This limitation can be overcome by using tensor factorization, in which context the use of log-frequency spectrograms was initiated, but this still requires the specific tuning of the instruments to be hard-coded into the algorithm. We develop a general-purpose sparse pursuit method that matches a discrete spectrum with given shifted continuous patterns. We first use it in order to transform our audio signal into a log-frequency spectrogram that shares properties with the mel spectrogram but is applicable to a wider frequency range. Then, we use the same algorithm to identify patterns from instrument sounds in the spectrogram. The relative amplitudes of the harmonics are saved in a dictionary, which is trained via a modified version of Adam. For a realistic monaural piece with acoustic recorder and violin, we achieve qualitatively good separation with a signal-to-distortion ratio (SDR) of 13.7 dB, a signal-to-interference ratio (SIR) of 28.1 dB, and a signal-to-artifacts ratio (SAR) of 13.9 dB, averaged over the instruments.
-
-**Data Set**: Not availabe
-
-**Source Code**: [Source Code](https://github.com/rgcda/Musisep)
-
-**Demo**: [Demo](https://www.math.colostate.edu/~king/software.html#Musisep)
 

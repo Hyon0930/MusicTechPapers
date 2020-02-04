@@ -2,12 +2,12 @@
 
 ## Overview
 This git repository is to create an archive of academic papers regarding music technologies.
-This main page summarizes structure of this archive, a way to make contribution to this repository. 
+This main page summarizes contents of this archive, a way to make contribution to this repository. 
 
 ## Structure
 This archive consists of mother groups and its child groups as follows. 
-Each child group contains a markdown file explaining academic papers, abstract, 
-demo, dataset used in the paper with links if available. 
+Each child group contains a markdown file listing academic papers, abstract, 
+demo, dataset used in the papers with links if available in order of latest to old. 
 
  
 | Mother Group | Child Group | 
@@ -35,3 +35,5 @@ If you need to create new mother group and child group, please mention that in t
 ## Acknowledgement
 This archive is inspired by two sources; [AutomaticMixingPapers](https://github.com/csteinmetz1/AutomaticMixingPapers) by [Christian Steinmetz](https://www.christiansteinmetz.com/) and [Paper With Code](https://paperswithcode.com/).
 Special thanks to them for their amazing work.
+
+
