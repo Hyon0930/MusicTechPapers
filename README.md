@@ -1,8 +1,8 @@
 # Academic Paper Archive of Music Technology 
 
 ## Overview
-This git repo is to create archive of academic papers regarding music technologies.
-This main page summarizes  structure of this archive,a way to make contribution ....
+This git repository is to create an archive of academic papers regarding music technologies.
+This main page summarizes structure of this archive, a way to make contribution to this repository. 
 
 ## Structure
 This archive consists of mother groups and its child groups as follows. 
@@ -26,7 +26,7 @@ demo, dataset used in the paper with links if available.
   
  
 ## The list of papers
-The entire list of paper organized by this repository is found in src/music_tech_papers - music_tech_papers.tsv
+The entire list of paper organized by this repository is found in [src/music_tech_papers - music_tech_papers.tsv](https://github.com/Hyon0930/MusicTechPapers/blob/master/src/music_tech_papers%20-%20music_tech_papers.tsv)
 
 ## How to contribute
 Please fill in the contents to the music_tech_papers_contents.tsv accordingly and upload it to issue with titile "Contribution to the archive."

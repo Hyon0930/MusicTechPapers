@@ -53,11 +53,11 @@ def main(filename):
 
             num_paper += 1
 
-    print("num_paper", num_paper)
-    print("structure", structure)
+    # print("num_paper", num_paper)
+    # print("structure", structure)
 
     paths = list(dict.fromkeys(paths))
-    pure_structure = list(dict.fromkeys(structure))
+    # pure_structure = list(dict.fromkeys(structure))
 
     for path in paths:
         merge_mds(path)
