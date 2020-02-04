@@ -62,10 +62,6 @@ def main(filename):
     for path in paths:
         merge_mds(path)
 
-# TODO dataset table can be added in next dev phase
-# def dataset_table(accumulated_table):
-#     first_column = "| Mother Group | Child Group | Data set |"
-
 def group_dataset_table(mother, child,
                      data_set1, data_set_url1,
                      data_set2, data_set_url2,
@@ -188,47 +184,19 @@ def sort_papers_by_year(filename):
         mixing.truncate()
         #check if this works properly.
 
-#TODO def structure_md():
 
 def create_main_md():
     # first block + structure.md + end_block.md
-    with open("README.md", "w+") as readme,
-        open("first_block.md") as first_block_md,
-        open("structure.md") as structure_md,
-        open("end_block.md") as end_block_md:
+    with open("../README.md", "w+") as readme, open("../first_block.md") as first_block_md, \
+            open("../structure.md") as structure_md, open("../end_block.md") as end_block:
 
-
-
-
-
-
-
+        readme.write(first_block_md.read())
+        readme.write(structure_md.read())
+        readme.write(end_block.read())
 
 
 if __name__ == "__main__":
-    #sort_papers_by_year("music_tech_papers - music_tech_papers.tsv")
+    sort_papers_by_year("music_tech_papers - music_tech_papers.tsv")
     main("music_tech_papers - music_tech_papers.tsv")
     create_main_md()
 
-    # find directory to put read me
-    # write one readme.md for each paper
-    # sort them by directory for them to be sit
-    # export readme.md at the directory
-
-'''
-    args = [data_set1, source_code, demo1]
-    print(args)
-    for n, item in enumerate(args):
-        if item == '':
-            print("check", item)
-            args[n] = "Not available"
-    print("args", args)
-    print("data_set1, source_code, demo1", data_set1, source_code, demo1)
-
-    if source_code == '':
-        source_code = "Not available"
-    if demo1 == '':
-        demo1 = "Not available"
-
-# +'['+  +']' +'(' + + ')' +
-'''

@@ -1,3 +1,6 @@
+## The list of papers
+The entire list of paper organized by this repository is found in src/music_tech_papers - music_tech_papers.tsv
+
 ## How to contribute
 Please fill in the contents to the music_tech_papers_contents.tsv accordingly and upload it to issue with titile "Contribution to the archive."
 If you need to create new mother group and child group, please mention that in the issue. 
