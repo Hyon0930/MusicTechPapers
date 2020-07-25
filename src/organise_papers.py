@@ -152,7 +152,7 @@ def create_md(path, publication_year, title, title_url, author,
             elif i % 2 == 0:
                 line_dataset += '['+ data[i] +']' + '(' + data[i+1] +'), '
         line_dataset = line_dataset[:-2] + "\n\n"
-
+        # TODO fix here; source code column is redundant.
         for i in range(0,len(source)):
             if source[i] == '':
                 if i == 0:
