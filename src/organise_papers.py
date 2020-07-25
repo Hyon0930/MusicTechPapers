@@ -2,8 +2,15 @@ import csv
 import operator
 import pdb
 import os
+import argparse
 
-def main(filename):
+def get_args():
+    parser = argparse.ArgumentParser()
+    parser.add_argument('--tsv_file', type=str, required=True, help='Please set a tsv file you want to parsse.')
+    args = parser.parse_args()
+    return args
+
+def main(filename, root_path):
 
     with open(filename) as papers:
         music_tech_papers = csv.DictReader(papers, dialect='excel-tab')
@@ -37,7 +44,7 @@ def main(filename):
             demo2 = entry[f[17]]
             demo_url2 = entry[f[18]]
 
-            path = file_destination(mother_group, child_group, "/home/hk/Documents/workspace/paper_archive/")
+            path = file_destination(mother_group, child_group, root_path)
             paths.append(path)
 
             create_md(path, publication_year, title, title_url, author,
@@ -50,7 +57,7 @@ def main(filename):
             #          data_set2, data_set_url2,
             #          data_set3, data_set_url3,
             #          accumulated_table)
-
+            print('check_{}'.format(filename))
             num_paper += 1
 
     paths = list(dict.fromkeys(paths))
@@ -77,7 +84,7 @@ def group_dataset_table(mother, child,
         table_line = '|' + mother + '|' + child + '|[' + data_set1 + '](' + data_set_url1 + ')|' \
                     + '|' + '|' + '|' +'|' \
                     + '|' +  '|' + '|' + '|'
-        accumuated_list.append(table_line)
+        return accumuated_list.append(table_line)
     elif len(content) == 2:
         table_line = '|' + mother + '|' + child + '|[' + data_set1 + '](' + data_set_url1 + ')|' \
                      + '|[' + data_set2 + '](' + data_set_url2 + ')|' \
@@ -107,8 +114,11 @@ def merge_mds(path_to_mds):
             if md != "README.md":
                 os.remove(path_to_mds+md)
 
+    readme.close()
+    return 0
+
 def file_destination(mother_group, child_group,
-                     root_path="/home/hk/Documents/workspace/proj/paper_archive/"):
+                     root_path):
     return root_path + mother_group + '/' + child_group + '/'
 
 def create_md(path, publication_year, title, title_url, author,
@@ -120,6 +130,7 @@ def create_md(path, publication_year, title, title_url, author,
     data = [data_set1, data_set_url1, data_set2, data_set_url2, data_set3, data_set_url3]
     source = [source_code, source_code_url]
     demo = [demo1, demo_url1, demo2, demo_url2]
+    print(path + publication_year + filename)
 
     with open(path+publication_year+filename,"w+") as paper_md:
 
@@ -172,6 +183,10 @@ def create_md(path, publication_year, title, title_url, author,
         paper_md.write(line_sourcecode)
         paper_md.write(line_demo)
 
+    paper_md.close()
+
+    return 0
+
 def sort_papers_by_year(filename):
     with open(filename, "r+") as mixing:
         mixing_tsv = csv.DictReader(mixing, dialect='excel-tab')
@@ -186,6 +201,8 @@ def sort_papers_by_year(filename):
             writer.writerow(row)
         mixing.truncate()
 
+    mixing.close()
+
 
 def create_main_md():
     # first block + structure.md + end_block.md
@@ -198,7 +215,11 @@ def create_main_md():
 
 
 if __name__ == "__main__":
-    sort_papers_by_year("music_tech_papers - music_tech_papers.tsv")
-    main("music_tech_papers - music_tech_papers.tsv")
+
+    file = get_args()
+
+    root_path = '../'
+    sort_papers_by_year(file.tsv_file)
+    main(file.tsv_file, root_path)
     create_main_md()
 

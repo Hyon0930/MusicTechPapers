@@ -10,6 +10,18 @@
 
 **Demo**: [Demo](https://colab.research.google.com/notebooks/magenta/gansynth/gansynth_demo.ipynb), [Demo](https://storage.googleapis.com/magentadata/papers/gansynth/index.html)
 
+#  [Adversarial Generation of Time-Frequency Features with application in audio synthesis](https://arxiv.org/abs/1902.04072)
+**Author**: Marafioti, Andrés; Holighaus, Nicki; Perraudin, Nathanaël; Majdak, Piotr
+
+**Year**: 2019
+>**Abstract**: Time-frequency (TF) representations provide powerful and intuitive features for the analysis of time series such as audio. But still, generative modeling of audio in the TF domain is a subtle matter. Consequently, neural audio synthesis widely relies on directly modeling the waveform and previous attempts at unconditionally synthesizing audio from neurally generated invertible TF features still struggle to produce audio at satisfying quality. In this article, focusing on the short-time Fourier transform, we discuss the challenges that arise in audio synthesis based on generated invertible TF features and how to overcome them. We demonstrate the potential of deliberate generative TF modeling by training a generative adversarial network (GAN) on short-time Fourier features. We show that by applying our guidelines, our TF-based network was able to outperform a state-of-the-art GAN generating waveforms directly, despite the similar architecture in the two networks.
+
+**Data Set**: Not availabe
+
+**Source Code**: Not availabe
+
+**Demo**: Not availabe
+
 #  [ADVERSARIAL AUDIO SYNTHESIS](https://arxiv.org/abs/1802.04208)
 **Author**: Donahue, Chris; McAuley, Julian; Puckette, Miller
 

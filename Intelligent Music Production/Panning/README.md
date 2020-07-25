@@ -10,7 +10,7 @@
 
 **Demo**: [Demo](http://www.stereosonic.org/phd/specPanning/)
 
-#  [AUTOMATIC MIXING: LIVE DOWNMIXING STEREO PANNER](https://pdfs.semanticscholar.org/7057/648eca7ba75172d851025e1390c5dd898c8b.pdf)
+#  [AUTOMATIC MIXING: LIVE DOWNMIXING STEREO PANNER TEMPLATES FOR DAFX04, NAPLES, ITALY](https://www.semanticscholar.org/paper/AUTOMATIC-MIXING%3A-LIVE-DOWNMIXING-STEREO-PANNER-FOR-Gonzalez-Reiss/7057648eca7ba75172d851025e1390c5dd898c8b)
 **Author**: Gonzalez, Enrique Perez; Reiss, Joshua
 
 **Year**: 2007

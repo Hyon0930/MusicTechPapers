@@ -10,3 +10,15 @@
 
 **Demo**: Not availabe
 
+#  [Musical data mining for electronic music distribution](https://www.researchgate.net/publication/3939810_Musical_data_mining_for_electronic_music_distribution)
+**Author**: Pachet, F.; Westermann, G.; Laigre, D.
+
+**Year**: 2001
+>**Abstract**: Music classification is a key ingredient for electronic music distribution. Because of the lack of standards in music classification – or the lack of enforcement of existing standards – there is a huge amount of unclassified titles of music in the world. In this paper we propose a method of classification based on musical data mining techniques that uses co-occurrence and correlation analysis for classification. This method allows for the rapid extraction of similarities between musical titles or artists. We investigate the usability of radio playlists and compilation CD databases for our data mining technique, and we compare the generated results with human similarity judgments. Based on a clustering technique, we show that interesting clusters can reveal specific music genres and allow classifying titles of music in a kind of objective manner.
+
+**Data Set**: Not availabe
+
+**Source Code**: Not availabe
+
+**Demo**: Not availabe
+
